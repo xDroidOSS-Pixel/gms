@@ -124,9 +124,9 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
 
-$(call inherit-product, vendor/gms/product/blobs/product_blobs.mk)
-$(call inherit-product, vendor/gms/system/blobs/system_blobs.mk)
-$(call inherit-product, vendor/gms/system_ext/blobs/system-ext_blobs.mk)
+$(call inherit-product, vendor/gapps/product/blobs/product_blobs.mk)
+$(call inherit-product, vendor/gapps/system/blobs/system_blobs.mk)
+$(call inherit-product, vendor/gapps/system_ext/blobs/system-ext_blobs.mk)
 
 # Pixel Dependencies
 PRODUCT_PACKAGES += \
