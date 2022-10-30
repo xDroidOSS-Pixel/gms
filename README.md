@@ -1,3 +1,3 @@
 # GMS Configuration
 
-Implementation: Select one configuration after sync process is done from ```gmsset```, then move or copy it to ```vendor/gms/gms_mini.mk``` or ```vendor/gms/gms_full.mk```
+Implementation: Select one configuration after sync process is done from ```gmsset```, then move or copy it to ```vendor/gapps/gms_mini.mk``` or ```vendor/gapps/gms_full.mk```
