@@ -16,10 +16,22 @@
 #
 #
 
+# arcore
+ifeq ($(TARGET_INCLUDE_STOCK_ARCORE),true)
+PRODUCT_PACKAGES += \
+    arcore
+endif
+
 # Quick Tap
 ifeq ($(TARGET_SUPPORTS_QUICK_TAP),true)
 PRODUCT_PACKAGES += \
     quick_tap
+endif
+
+# Call recording on Google Dialer
+ifeq ($(TARGET_SUPPORTS_CALL_RECORDING),true)
+PRODUCT_PACKAGES += \
+    com.google.android.apps.dialer.call_recording_audio.features
 endif
 
 # product/app
@@ -38,44 +50,58 @@ PRODUCT_PACKAGES += \
     Photos \
     PixelThemesStub \
     PixelWallpapers2021 \
-    PlayAutoInstallConfig \
     PrebuiltBugle \
     PrebuiltDeskClockGoogle \
+    SoundAmplifierPrebuilt \
     SoundPickerPrebuilt \
     TrichromeLibrary \
     TrichromeLibrary-Stub \
+    Tycho \
+    VZWAPNLib \
     WebViewGoogle \
     WebViewGoogle-Stub \
-    arcore \
     talkback
 
 # product/priv-app
 PRODUCT_PACKAGES += \
+    AmbientStreaming \
     AndroidAutoStubPrebuilt \
+    AppDirectedSMSService \
     CarrierLocation \
     CarrierServices \
+    CarrierWifi \
     ConfigUpdater \
+    DCMO \
+    ConnMO \
     DeviceIntelligenceNetworkPrebuilt \
     DevicePersonalizationPrebuiltPixel2021 \
+    DMService \
     FilesPrebuilt \
+    GCS \
     GoogleCamera \
     GoogleDialer \
     GoogleOneTimeInitializer \
     GoogleRestorePrebuilt \
     ImsServiceEntitlement \
     MaestroPrebuilt \
+    MyVerizonServices \
     OdadPrebuilt \
     PartnerSetupPrebuilt \
     Phonesky \
     PrebuiltBugle \
     SCONE \
     SafetyHubPrebuilt \
+    ScribePrebuilt \
     SecurityHubPrebuilt \
     SettingsIntelligenceGooglePrebuilt \
     SetupWizardPrebuilt \
+    Showcase \
+    TetheringEntitlement \
     TurboPrebuilt \
     Velvet \
-    WellbeingPrebuilt
+    VzwOmaTrigger \
+    WellbeingPrebuilt \
+    WfcActivation
 
 # system/app
 PRODUCT_PACKAGES += \
