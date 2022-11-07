@@ -16,10 +16,14 @@
 #
 #
 
-# arcore
-ifeq ($(TARGET_INCLUDE_STOCK_ARCORE),true)
+# Prebuilt Apex apps
+ifeq ($(TARGET_SHIP_PREBUILT_APEX),true)
 PRODUCT_PACKAGES += \
-    arcore
+    CaptivePortalLoginGoogle \
+    NetworkPermissionConfigGoogle \
+    NetworkStackGoogle \
+    PrebuiltGoogleAdservicesTvp \
+    PrebuiltGoogleTelemetryTvp
 endif
 
 # Quick Tap
@@ -28,18 +32,13 @@ PRODUCT_PACKAGES += \
     quick_tap
 endif
 
-# Call recording on Google Dialer
-ifeq ($(TARGET_SUPPORTS_CALL_RECORDING),true)
-PRODUCT_PACKAGES += \
-    com.google.android.apps.dialer.call_recording_audio.features
-endif
-
 # product/app
 PRODUCT_PACKAGES += \
     CalculatorGooglePrebuilt \
     CalendarGooglePrebuilt \
     Chrome \
     Chrome-Stub \
+    GoogleCamera \
     GoogleContacts \
     GoogleContactsSyncAdapter \
     GoogleTTS \
@@ -60,6 +59,7 @@ PRODUCT_PACKAGES += \
     VZWAPNLib \
     WebViewGoogle \
     WebViewGoogle-Stub \
+    arcore \
     talkback
 
 # product/priv-app
@@ -74,11 +74,10 @@ PRODUCT_PACKAGES += \
     DCMO \
     ConnMO \
     DeviceIntelligenceNetworkPrebuilt \
-    DevicePersonalizationPrebuiltPixel2021 \
+    DevicePersonalizationPrebuiltPixel2020 \
     DMService \
     FilesPrebuilt \
     GCS \
-    GoogleCamera \
     GoogleDialer \
     GoogleOneTimeInitializer \
     GoogleRestorePrebuilt \
@@ -131,6 +130,10 @@ PRODUCT_PACKAGES += \
     TurboAdapter \
     WallpaperPickerGoogleRelease
 
+# Pixel Dependencies
+PRODUCT_PACKAGES += \
+    PixelDependencies
+
 # PrebuiltGmsCore
 PRODUCT_PACKAGES += \
     PrebuiltGmsCoreSc \
@@ -150,10 +153,6 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
 
-$(call inherit-product, vendor/gapps/product/blobs/product_blobs.mk)
-$(call inherit-product, vendor/gapps/system/blobs/system_blobs.mk)
-$(call inherit-product, vendor/gapps/system_ext/blobs/system-ext_blobs.mk)
-
-# Pixel Dependencies
-PRODUCT_PACKAGES += \
-    PixelDependencies
+$(call inherit-product, vendor/gms/product/blobs/product_blobs.mk)
+$(call inherit-product, vendor/gms/system/blobs/system_blobs.mk)
+$(call inherit-product, vendor/gms/system_ext/blobs/system-ext_blobs.mk)
